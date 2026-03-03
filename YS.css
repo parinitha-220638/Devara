@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: black;
+    border-bottom: 1px solid darkred;
+}
+
+.logo {
+    color: red;
+    font-size: 28px;
+    letter-spacing: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero {
+    height: 100vh;
+    background: url('devara.jpeg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark cinematic overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(139,0,0,0.3), rgba(0,0,0,0.95));
+}
+
+/* Slight moving overlay effect */
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+    opacity: 0.05;
+    animation: moveTexture 20s linear infinite;
+}
+
+@keyframes moveTexture {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* TITLE */
+.content h1 {
+    font-size: 90px;
+    color: red;
+    letter-spacing: 10px;
+    text-shadow:
+        0 0 10px red,
+        0 0 25px darkred,
+        0 0 50px black;
+    margin-bottom: 20px;
+}
+
+/* SUBTEXT */
+.content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+/* BUTTON */
+button {
+    padding: 15px 45px;
+    background: transparent;
+    border: 2px solid red;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+button:hover {
+    background: red;
+    color: black;
+    box-shadow: 0 0 30px red;
+    transform: scale(1.05);
+}
